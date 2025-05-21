@@ -91,7 +91,7 @@ const PricingSection: React.FC = () => {
 
   return (
     <div id="pricing" className="py-24 bg-gray-50">
-      <div className="section-container">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
         <h2 className="text-3xl font-bold text-center mb-2 animate-on-scroll">Pricing Plans</h2>
         <p className="text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto animate-on-scroll">
           Choose the package that best suits your needs and start your digital journey.
