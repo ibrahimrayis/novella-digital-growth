@@ -99,7 +99,7 @@ const PricingSection: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {websitePackages.map((pkg, index) => (
-            <Card key={index} className={`pricing-card animate-on-scroll ${index === 1 ? 'border-2 border-novella-red' : ''}`} style={{animationDelay: `${index * 0.15}s`}}>
+            <Card key={index} className={`pricing-card animate-on-scroll relative ${index === 1 ? 'border-2 border-novella-red' : ''}`} style={{animationDelay: `${index * 0.15}s`}}>
               {index === 1 && (
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                   <Badge className="bg-novella-red text-white px-3 py-1 text-sm">
