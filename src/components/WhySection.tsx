@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 const WhySection: React.FC = () => {
   const { t } = useLanguage();
@@ -82,25 +82,27 @@ const WhySection: React.FC = () => {
 
   return (
     <div id="why" className="py-24 bg-white">
-      <div className="section-container">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
         <h2 className="text-3xl font-bold text-center mb-2 animate-on-scroll">{t('why.title')}</h2>
         <p className="text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto animate-on-scroll">
           {t('why.subtitle')}
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {reasons.map((reason, index) => (
-            <div 
+            <Card 
               key={index}
-              className="feature-card animate-on-scroll"
+              className="animate-on-scroll border-none shadow-lg hover:shadow-xl transition-all duration-300"
               style={{animationDelay: `${index * 0.15}s`}}
             >
-              <div className="p-2 bg-red-50 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                {reason.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{t(reason.title)}</h3>
-              <p className="text-gray-600">{t(reason.description)}</p>
-            </div>
+              <CardContent className="p-6">
+                <div className="p-3 bg-red-50 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                  {reason.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-3">{t(reason.title)}</h3>
+                <p className="text-gray-600">{t(reason.description)}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
